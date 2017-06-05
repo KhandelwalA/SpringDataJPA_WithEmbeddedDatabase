@@ -1,0 +1,119 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ProductService_JPA_Embedded_db",
+		"_postman_id": "399e1531-69e7-df77-2279-b2bace2fa9b0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/category/getAllCategories",
+			"request": {
+				"url": "localhost:8080/category/getAllCategories",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Retrieve all products"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/category/addCategory",
+			"request": {
+				"url": "http://localhost:8080/category/addCategory",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n  {\n    \"categoryName\": \"UTILITIES\",\n    \"categoryDescription\": \"This category has all the utilities information\"\n  }"
+				},
+				"description": "To add a product"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/category/getCategoryById/3",
+			"request": {
+				"url": "http://localhost:8080/category/getCategoryById/3",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "\"Content-Type\":\"application/json;charset=UTF-8\"",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "To fetch a product by Id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/category/getCategoryByName/Pen",
+			"request": {
+				"url": "http://localhost:8080/product/category/getCategoryByName/Pen/Pencil",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "\"Content-Type\":\"application/json;charset=UTF-8\"",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "To fetch a product by Name"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/personal/addPersonalAsset",
+			"request": {
+				"url": "http://localhost:8080/personal/addPersonalAsset",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":{\n\t\"categoryId\":1\n    },\n    \"uniqueNumber\":\"789\",\n    \"miscellaneousInfo\":\"This is miscellaneous Information\",\n    \"asset\":{\n    \t\"assetName\":\"Personal Account Number\",\n    \t\"assetType\":\"Personal Identification\"\n    }\n}"
+				},
+				"description": "To add a product"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/personal/getAllPersonalAsset",
+			"request": {
+				"url": "localhost:8080/personal/getAllPersonalAsset",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Retrieve all products"
+			},
+			"response": []
+		}
+	]
+}
