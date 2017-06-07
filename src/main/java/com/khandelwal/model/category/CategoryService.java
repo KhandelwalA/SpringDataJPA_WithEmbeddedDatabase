@@ -30,7 +30,7 @@ public class CategoryService {
 	 */
 	public Collection<Category> getAllCategories() {
 
-		Collection<Category> categoryList = new ArrayList<>();
+		Collection<Category> categoryList = new ArrayList<Category>();
 		for (Category category : categoryRepository.findAll()) {
 			categoryList.add(category);
 		}

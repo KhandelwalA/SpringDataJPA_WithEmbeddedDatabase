@@ -1,10 +1,10 @@
-package com.khandelwal.model.asset.personal;
+package com.khandelwal.model.asset.investment;
 
 import java.util.Collection;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.khandelwal.domainmodel.asset.personal.PersonalAsset;
+import com.khandelwal.domainmodel.asset.investment.InvestmentAsset;
 
 /**
  * This interface extends CrudRepository of Springframework, implementation of
@@ -14,7 +14,10 @@ import com.khandelwal.domainmodel.asset.personal.PersonalAsset;
  * @author Abhishek Khandelwal
  *
  */
-public interface PersonalAssetRepository extends CrudRepository<PersonalAsset, String> {
+public interface InvestmentAssetRepository extends
+		CrudRepository<InvestmentAsset, String> {
 
-	public Collection<PersonalAsset> findByAssetName(String assetName);
+	public Collection<InvestmentAsset> findByAssetName(String assetName);
+
+	public Collection<InvestmentAsset> findByAssetType(String assetType);
 }

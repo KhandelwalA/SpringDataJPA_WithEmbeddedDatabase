@@ -50,9 +50,9 @@ public class PersonalAssetService {
 	 * 
 	 * @return
 	 */
-	public PersonalAsset getPersonalAssetById(Integer assetId) {
+	public PersonalAsset getPersonalAssetByNumber(String assetNumber) {
 
-		return personalAssetRepository.findOne(assetId);
+		return personalAssetRepository.findOne(assetNumber);
 
 	}
 
@@ -61,20 +61,20 @@ public class PersonalAssetService {
 	 * 
 	 * @return
 	 */
-	/*public PersonalAsset getPersonalAssetByName(String assetName) {
+	public Collection<PersonalAsset> getPersonalAssetByName(String assetName) {
 
-		return personalAssetRepository.findAssetName(assetName);
+		return personalAssetRepository.findByAssetName(assetName);
 
-	}*/
+	}
 
 	/**
 	 * This method delete the PersonalAsset record matched by Id
 	 * 
 	 * @return
 	 */
-	public void deletePersonalAsset(Integer assetId) {
+	public void deletePersonalAsset(String assetNumber) {
 
-		personalAssetRepository.delete(assetId);
+		personalAssetRepository.delete(assetNumber);
 
 	}
 }

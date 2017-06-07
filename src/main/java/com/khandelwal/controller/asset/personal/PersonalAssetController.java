@@ -44,34 +44,36 @@ public class PersonalAssetController {
 			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<Collection<PersonalAsset>> getAllPersonalAsset() {
 
-		return new ResponseEntity<Collection<PersonalAsset>>(personalAssetService.getAllPersonalAsset(), HttpStatus.OK);
+		return new ResponseEntity<Collection<PersonalAsset>>(
+				personalAssetService.getAllPersonalAsset(), HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/getPersonalAssetById/{assetId}", method = RequestMethod.GET, produces = {
+	@RequestMapping(value = "/getPersonalAssetByNumber/{assetnumber}", method = RequestMethod.GET, produces = {
 			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, consumes = {
-					MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public ResponseEntity<PersonalAsset> getPersonalAssetById(@PathVariable Integer assetId) {
+			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+	public ResponseEntity<PersonalAsset> getPersonalAssetByNumber(
+			@PathVariable String assetnumber) {
 
-		return new ResponseEntity<PersonalAsset>(personalAssetService.getPersonalAssetById(assetId), HttpStatus.OK);
+		return new ResponseEntity<PersonalAsset>(
+				personalAssetService.getPersonalAssetByNumber(assetnumber),
+				HttpStatus.OK);
 	}
 
-	/*
-	 * @RequestMapping(name = "/getPersonalAssetByName/{assetName}", method =
-	 * RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
-	 * MediaType.APPLICATION_XML_VALUE }, consumes = {
-	 * MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	 * public ResponseEntity<PersonalAsset> getPersonalAssetByName(@PathVariable
-	 * String assetName) {
-	 * 
-	 * return new
-	 * ResponseEntity<PersonalAsset>(personalAssetService.getPersonalAssetByName
-	 * (assetName), HttpStatus.OK); }
-	 */
-
-	@RequestMapping(value = "/deletePersonalAssetById/{assetId}", method = RequestMethod.GET, consumes = {
+	@RequestMapping(value = "/getPersonalAssetByName/{assetName}", method = RequestMethod.GET, produces = {
+			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, consumes = {
 			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public void deletePersonalAssetByName(@PathVariable Integer assetId) {
+	public ResponseEntity<Collection<PersonalAsset>> getPersonalAssetByName(
+			@PathVariable String assetName) {
 
-		personalAssetService.deletePersonalAsset(assetId);
+		return new ResponseEntity<Collection<PersonalAsset>>(
+				personalAssetService.getPersonalAssetByName(assetName),
+				HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/deletePersonalAssetById/{assetNumber}", method = RequestMethod.GET, consumes = {
+			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+	public void deletePersonalAssetByName(@PathVariable String assetNumber) {
+
+		personalAssetService.deletePersonalAsset(assetNumber);
 	}
 }

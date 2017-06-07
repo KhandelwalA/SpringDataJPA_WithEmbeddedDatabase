@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "ProductService_JPA_Embedded_db",
-		"_postman_id": "399e1531-69e7-df77-2279-b2bace2fa9b0",
+		"_postman_id": "395cdc77-197d-3edb-2396-8b9cf35e33df",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -10,7 +10,7 @@
 		{
 			"name": "http://localhost:8080/category/getAllCategories",
 			"request": {
-				"url": "localhost:8080/category/getAllCategories",
+				"url": "localhost:8181/category/getAllCategories",
 				"method": "GET",
 				"header": [
 					{
@@ -25,9 +25,9 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/category/addCategory",
+			"name": "http://localhost:8181/category/addCategory",
 			"request": {
-				"url": "http://localhost:8080/category/addCategory",
+				"url": "http://localhost:8181/category/addCategory",
 				"method": "POST",
 				"header": [
 					{
@@ -38,7 +38,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "\n  {\n    \"categoryName\": \"UTILITIES\",\n    \"categoryDescription\": \"This category has all the utilities information\"\n  }"
+					"raw": "\n  {\n    \"categoryName\": \"UTILITY\",\n    \"categoryDescription\": \"This category has all the utility information\"\n  }"
 				},
 				"description": "To add a product"
 			},
@@ -56,7 +56,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "To fetch a product by Id"
 			},
 			"response": []
@@ -73,7 +76,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "To fetch a product by Name"
 			},
 			"response": []
@@ -81,7 +87,7 @@
 		{
 			"name": "http://localhost:8080/personal/addPersonalAsset",
 			"request": {
-				"url": "http://localhost:8080/personal/addPersonalAsset",
+				"url": "http://localhost:8181/personal/addPersonalAsset",
 				"method": "POST",
 				"header": [
 					{
@@ -92,7 +98,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"category\":{\n\t\"categoryId\":1\n    },\n    \"uniqueNumber\":\"789\",\n    \"miscellaneousInfo\":\"This is miscellaneous Information\",\n    \"asset\":{\n    \t\"assetName\":\"Personal Account Number\",\n    \t\"assetType\":\"Personal Identification\"\n    }\n}"
+					"raw": "{\n\t\"category\":{\n\t\t\"categoryId\":2\n    },\n    \n    \"miscellaneousInfo\":\"This is permanent account number from Indian government\",\n    \"assetNumber\":\"ASCPK6664N\",\n    \"assetName\":\"PAN\",\n    \"assetType\":\"Permanent Account Number\",\n    \n    \"assetAddress\":{\n    \t\"addressLine1\":\"24\",\n    \t\"addressLine2\":\"Walnut Lane\",\n    \t\"addressLine3\":\"Crawley\",\n    \t\"addressLine4\":\"West Sussex\",\n    \t\"addressLine5\":\"RH117NH\",\n    \t\"websiteURL\":\"Pan.gov.in\"\n    },\n    \n    \"assetcredentials\":{\n    \t\"loginId\":\"kh.abhishek@gmail.com\",\n    \t\"password\":\"Password\",\n    \t\"phonePassword\":\"07539295004\"\n    },\n    \n    \"assetContactInformation\":{\n    \t\"contactNumber1\":\"0129-3456778\",\n    \t\"contactNumber2\":\"07539295004\",\n    \t\"contactNumber3\":\"07534778868\"\n    },\n    \n    \"assetSecurityInformation\":{\n    \t\"securityQuestion1\":\"What's your father middle name\",\n    \t\"securityAnswer1\":\"Prakash\",\n    \t\"securityQuestion2\":\"What's you Mobile brand\",\n    \t\"securityAnswer2\":\"Iphone\",\n    \t\"securityQuestion3\":\"Which company car you own\",\n    \t\"securityAnswer3\":\"Hyundai\"\n    }\n}"
 				},
 				"description": "To add a product"
 			},
@@ -101,7 +107,95 @@
 		{
 			"name": "http://localhost:8080/personal/getAllPersonalAsset",
 			"request": {
-				"url": "localhost:8080/personal/getAllPersonalAsset",
+				"url": "localhost:8181/personal/getAllPersonalAsset",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Retrieve all products"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/personal/getPersonalAssetByNumber/ASCPK6664N",
+			"request": {
+				"url": "localhost:8181/personal/getPersonalAssetByNumber/ASCPK6664N",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Retrieve all products"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8181/personal/getPersonalAssetByName/PAN",
+			"request": {
+				"url": "localhost:8181/personal/getPersonalAssetByName/PAN",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Retrieve all products"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8181/investment/addInvestmentAsset",
+			"request": {
+				"url": "http://localhost:8181/personal/addPersonalAsset",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"category\":{\n\t\t\"categoryId\":2\n    },\n    \n    \"miscellaneousInfo\":\"This is permanent account number from Indian government\",\n    \"assetNumber\":\"ASCPK6664N\",\n    \"assetName\":\"PAN\",\n    \"assetType\":\"Permanent Account Number\",\n    \n    \"assetAddress\":{\n    \t\"addressLine1\":\"24\",\n    \t\"addressLine2\":\"Walnut Lane\",\n    \t\"addressLine3\":\"Crawley\",\n    \t\"addressLine4\":\"West Sussex\",\n    \t\"addressLine5\":\"RH117NH\",\n    \t\"websiteURL\":\"Pan.gov.in\"\n    },\n    \n    \"assetcredentials\":{\n    \t\"loginId\":\"kh.abhishek@gmail.com\",\n    \t\"password\":\"Password\",\n    \t\"phonePassword\":\"07539295004\"\n    },\n    \n    \"assetContactInformation\":{\n    \t\"contactNumber1\":\"0129-3456778\",\n    \t\"contactNumber2\":\"07539295004\",\n    \t\"contactNumber3\":\"07534778868\"\n    },\n    \n    \"assetSecurityInformation\":{\n    \t\"securityQuestion1\":\"What's your father middle name\",\n    \t\"securityAnswer1\":\"Prakash\",\n    \t\"securityQuestion2\":\"What's you Mobile brand\",\n    \t\"securityAnswer2\":\"Iphone\",\n    \t\"securityQuestion3\":\"Which company car you own\",\n    \t\"securityAnswer3\":\"Hyundai\"\n    }\n}"
+				},
+				"description": "To add a product"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8181/investment/getAllInvestmentAsset",
+			"request": {
+				"url": "localhost:8181/personal/getAllPersonalAsset",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Retrieve all products"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8181/investment/getInvestmentAssetByType/MutualFund",
+			"request": {
+				"url": "localhost:8181/investment/getInvestmentAssetByType/MutualFund",
 				"method": "GET",
 				"header": [
 					{
