@@ -82,7 +82,7 @@ public class InvestmentAssetController {
 				HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/deleteInvestmentAssetById/{assetNumber}", method = RequestMethod.GET, consumes = {
+	@RequestMapping(value = "/deleteInvestmentAssetById/{assetNumber}", method = RequestMethod.DELETE, consumes = {
 			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public void deleteInvestmentAssetByName(@PathVariable String assetNumber) {
 

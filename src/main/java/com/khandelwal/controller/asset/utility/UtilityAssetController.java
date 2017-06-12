@@ -81,7 +81,7 @@ public class UtilityAssetController {
 				HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/deleteUtilityAssetById/{assetNumber}", method = RequestMethod.GET, consumes = {
+	@RequestMapping(value = "/deleteUtilityAssetById/{assetNumber}", method = RequestMethod.DELETE, consumes = {
 			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public void deleteUtilityAssetByName(@PathVariable String assetNumber) {
 
